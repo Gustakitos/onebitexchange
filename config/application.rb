@@ -16,4 +16,8 @@ module OneBitExchange
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
+  def self.credentials
+    @credentials ||= Rails.application.credentials[Rails.env.to_sym]
+  end
 end
