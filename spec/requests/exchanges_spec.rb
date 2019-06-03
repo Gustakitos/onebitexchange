@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Exchanges', type: :request do
   describe 'GET #index' do
     it 'returns http success' do
-      get '/'
+      get '/exchanges/index'
       expect(response).to have_http_status(200)
     end
   end
@@ -14,7 +14,7 @@ RSpec.describe 'Exchanges', type: :request do
     end
  
     it 'returns http success' do
-      get '/convert', params: {
+      get '/exchanges/convert', params: {
                         source_currency: "USD",
                         target_currency: "BRL",
                         amount: @amount
